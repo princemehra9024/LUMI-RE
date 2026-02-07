@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMIÈRE Color Palette</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #000000;
+            color: #FAFAFA;
+            padding: 3rem 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #D4AF37, #E8D7B5 60%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #838181;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #D4AF37;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 0.5rem;
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .color-card {
+            background: #1D1D1F;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #3B3130;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .color-card:hover {
+            transform: translateY(-4px);
+            border-color: #D4AF37;
+        }
+
+        .color-swatch {
+            height: 120px;
+            width: 100%;
+            position: relative;
+        }
+
+        .color-info {
+            padding: 1.25rem;
+        }
+
+        .color-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #FAFAFA;
+            margin-bottom: 0.5rem;
+        }
+
+        .color-hex {
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            color: #D4AF37;
+            margin-bottom: 0.25rem;
+        }
+
+        .color-rgb {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #838181;
+            margin-bottom: 0.75rem;
+        }
+
+        .color-usage {
+            font-size: 0.9rem;
+            color: #E8D7B5;
+            line-height: 1.5;
+        }
+
+        .gradient-card {
+            background: #1D1D1F;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #3B3130;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .gradient-card:hover {
+            transform: translateY(-4px);
+            border-color: #D4AF37;
+        }
+
+        .gradient-swatch {
+            height: 100px;
+            width: 100%;
+        }
+
+        .gradient-info {
+            padding: 1.25rem;
+        }
+
+        .gradient-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #FAFAFA;
+            margin-bottom: 0.5rem;
+        }
+
+        .gradient-code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: #838181;
+            background: #0A0A0A;
+            padding: 0.75rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 0.75rem;
+        }
+
+        .gradient-usage {
+            font-size: 0.9rem;
+            color: #E8D7B5;
+        }
+
+        .copy-btn {
+            background: #D4AF37;
+            color: #000000;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .copy-btn:hover {
+            background: #B69121;
+        }
+
+        .copy-btn:active {
+            background: #A57A03;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .color-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LUMIÈRE Color Palette</h1>
+        <p class="subtitle">Complete color theme for the luxury restaurant website</p>
+
+        <!-- PRIMARY COLORS -->
+        <div class="section">
+            <h2 class="section-title">Primary Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #000000;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Pure Black</div>
+                        <div class="color-hex">#000000</div>
+                        <div class="color-rgb">rgb(0, 0, 0)</div>
+                        <div class="color-usage">Main backgrounds, primary text, logo</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#000000')">Copy Hex</button>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #D4AF37;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Luxury Gold</div>
+                        <div class="color-hex">#D4AF37</div>
+                        <div class="color-rgb">rgb(212, 175, 55)</div>
+                        <div class="color-usage">Primary CTAs, accents, hover states, borders</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#D4AF37')">Copy Hex</button>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #FAFAFA;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Cream White</div>
+                        <div class="color-hex">#FAFAFA</div>
+                        <div class="color-rgb">rgb(250, 250, 250)</div>
+                        <div class="color-usage">Body backgrounds, text on dark surfaces</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#FAFAFA')">Copy Hex</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECONDARY COLORS -->
+        <div class="section">
+            <h2 class="section-title">Secondary Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #0A0A0A;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Rich Black</div>
+                        <div class="color-hex">#0A0A0A</div>
+                        <div class="color-rgb">rgb(10, 10, 10)</div>
+                        <div class="color-usage">Card backgrounds, sections with depth</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#0A0A0A')">Copy Hex</button>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #1D1D1F;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Charcoal</div>
+                        <div class="color-hex">#1D1D1F</div>
+                        <div class="color-rgb">rgb(29, 29, 31)</div>
+                        <div class="color-usage">Secondary backgrounds, navbar</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#1D1D1F')">Copy Hex</button>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #B69121;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Dark Gold</div>
+                        <div class="color-hex">#B69121</div>
+                        <div class="color-rgb">rgb(182, 145, 33)</div>
+                        <div class="color-usage">Hover states, darker gold accents</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#B69121')">Copy Hex</button>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #E8D7B5;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Light Gold</div>
+                        <div class="color-hex">#E8D7B5</div>
+                        <div class="color-rgb">rgb(232, 215, 181)</div>
+                        <div class="color-usage">Subtle highlights, dividers, borders</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#E8D7B5')">Copy Hex</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACCENT COLORS -->
+        <div class="section">
+            <h2 class="section-title">Accent & Utility Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #A57A03;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Bronze</div>
+                        <div class="color-hex">#A57A03</div>
+                        <div class="color-rgb">rgb(165, 122, 3)</div>
+                        <div class="color-usage">Success states, premium badges</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#A57A03')">Copy Hex</button>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #838181;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Warm Gray</div>
+                        <div class="color-hex">#838181</div>
+                        <div class="color-rgb">rgb(131, 129, 129)</div>
+                        <div class="color-usage">Disabled states, secondary text</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#838181')">Copy Hex</button>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #F5F5DC;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Off-White</div>
+                        <div class="color-hex">#F5F5DC</div>
+                        <div class="color-rgb">rgb(245, 245, 220)</div>
+                        <div class="color-usage">Alternative light background, cards</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#F5F5DC')">Copy Hex</button>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #400128;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Deep Burgundy</div>
+                        <div class="color-hex">#400128</div>
+                        <div class="color-rgb">rgb(64, 1, 40)</div>
+                        <div class="color-usage">Optional accent for wine/premium sections</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#400128')">Copy Hex</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TEXT COLORS -->
+        <div class="section">
+            <h2 class="section-title">Text Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #000000;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Primary Text</div>
+                        <div class="color-hex">#000000</div>
+                        <div class="color-rgb">rgb(0, 0, 0)</div>
+                        <div class="color-usage">Headings, important content on light backgrounds</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#000000')">Copy Hex</button>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #3B3130;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Secondary Text</div>
+                        <div class="color-hex">#3B3130</div>
+                        <div class="color-rgb">rgb(59, 49, 48)</div>
+                        <div class="color-usage">Body text, descriptions</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#3B3130')">Copy Hex</button>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #FAFAFA;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Text on Dark</div>
+                        <div class="color-hex">#FAFAFA</div>
+                        <div class="color-rgb">rgb(250, 250, 250)</div>
+                        <div class="color-usage">Text over black/dark backgrounds</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#FAFAFA')">Copy Hex</button>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #D4AF37;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Accent Text</div>
+                        <div class="color-hex">#D4AF37</div>
+                        <div class="color-rgb">rgb(212, 175, 55)</div>
+                        <div class="color-usage">Links, highlighted text, prices</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#D4AF37')">Copy Hex</button>
+                    </div>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #838181;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Muted Text</div>
+                        <div class="color-hex">#838181</div>
+                        <div class="color-rgb">rgb(131, 129, 129)</div>
+                        <div class="color-usage">Captions, timestamps, metadata</div>
+                        <button class="copy-btn" onclick="copyToClipboard('#838181')">Copy Hex</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GRADIENTS -->
+        <div class="section">
+            <h2 class="section-title">Gradient Combinations</h2>
+            
+            <div class="gradient-card">
+                <div class="gradient-swatch" style="background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);"></div>
+                <div class="gradient-info">
+                    <div class="gradient-name">Hero Overlay</div>
+                    <div class="gradient-code">background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);</div>
+                    <div class="gradient-usage">Hero sections, image overlays for readability</div>
+                    <button class="copy-btn" onclick="copyToClipboard('linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%)')">Copy CSS</button>
+                </div>
+            </div>
+
+            <div class="gradient-card">
+                <div class="gradient-swatch" style="background: linear-gradient(135deg, #D4AF37 0%, #B69121 50%, #A57A03 100%);"></div>
+                <div class="gradient-info">
+                    <div class="gradient-name">Gold Shimmer</div>
+                    <div class="gradient-code">background: linear-gradient(135deg, #D4AF37 0%, #B69121 50%, #A57A03 100%);</div>
+                    <div class="gradient-usage">Premium buttons, accent elements, decorative borders</div>
+                    <button class="copy-btn" onclick="copyToClipboard('linear-gradient(135deg, #D4AF37 0%, #B69121 50%, #A57A03 100%)')">Copy CSS</button>
+                </div>
+            </div>
+
+            <div class="gradient-card">
+                <div class="gradient-swatch" style="background: linear-gradient(to right, #000000 0%, #1D1D1F 50%, #000000 100%);"></div>
+                <div class="gradient-info">
+                    <div class="gradient-name">Dark Elegant</div>
+                    <div class="gradient-code">background: linear-gradient(to right, #000000 0%, #1D1D1F 50%, #000000 100%);</div>
+                    <div class="gradient-usage">Section backgrounds, card backgrounds with depth</div>
+                    <button class="copy-btn" onclick="copyToClipboard('linear-gradient(to right, #000000 0%, #1D1D1F 50%, #000000 100%)')">Copy CSS</button>
+                </div>
+            </div>
+
+            <div class="gradient-card">
+                <div class="gradient-swatch" style="background: linear-gradient(to top, #000000 0%, transparent 60%);"></div>
+                <div class="gradient-info">
+                    <div class="gradient-name">Image Overlay</div>
+                    <div class="gradient-code">background: linear-gradient(to top, #000000 0%, transparent 60%);</div>
+                    <div class="gradient-usage">Bottom-to-top overlays on images for text readability</div>
+                    <button class="copy-btn" onclick="copyToClipboard('linear-gradient(to top, #000000 0%, transparent 60%)')">Copy CSS</button>
+                </div>
+            </div>
+
+            <div class="gradient-card">
+                <div class="gradient-swatch" style="background: linear-gradient(90deg, #D4AF37, #E8D7B5 60%); color: transparent; background-clip: text; -webkit-background-clip: text; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold;">
+                    LUMIÈRE
+                </div>
+                <div class="gradient-info">
+                    <div class="gradient-name">Gold Text Gradient</div>
+                    <div class="gradient-code">background: linear-gradient(90deg, #D4AF37, #E8D7B5 60%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;</div>
+                    <div class="gradient-usage">Premium headings, featured text, luxury branding</div>
+                    <button class="copy-btn" onclick="copyToClipboard('background: linear-gradient(90deg, #D4AF37, #E8D7B5 60%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;')">Copy CSS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Show feedback
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                btn.style.background = '#A57A03';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '#D4AF37';
+                }, 1500);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+    </script>
+</body>
+</html>
